@@ -1,0 +1,163 @@
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #151718;
+  color: #E6E6E6;
+}
+
+/* NAVBAR EYY */
+.navbar-custom {
+  background: #A0A0A0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: black;
+}
+
+.navbar-brand:hover {
+  color: #E6E6E6;
+}
+
+.nav-link {
+  color: black !important;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #E6E6E6 !important;
+}
+
+.nav-link::after {
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #7C8A7E;
+  transition: .3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.btn-outline-accent {
+  border: 1px solid black;
+  color: black;
+}
+
+.btn-outline-accent:hover {
+  background: #7C8A7E;
+  color: #151718;
+}
+
+/* HERO EYYYY*/
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(#151718, #1B1E20);
+}
+
+.hero h1 {
+  letter-spacing: 8px;
+  font-size: 4rem;
+}
+
+/* SECTION EYYYY */
+section {
+  padding: 90px 0;
+}
+
+/* ABOUT EYYY*/
+#about {
+  background: #1B1E20;
+}
+
+/* PRODUCT EYYY*/
+#product {
+  background: #202428;
+}
+
+.product-card {
+  background: #101213;
+  border: none;
+  transition: .3s;
+}
+
+.product-card img {
+  height: 320px;
+  object-fit: cover;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+.product-card p {
+  color: #A0A0A0;
+}
+
+.product-card h6 {
+  color: #A0A0A0;
+
+}
+
+.btn-buy {
+  background: transparent;
+  border: 1px solid #7C8A7E;
+  color: #7C8A7E;
+}
+
+.btn-buy:hover {
+  background: #7C8A7E;
+  color: #151718;
+}
+
+/* CONTACT EYYYY */
+#contact {
+  background: #1B1E20;
+}
+
+.contact-form {
+  max-width: 420px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: #1F2326;
+  border: none;
+  color: #E6E6E6;
+  padding: 12px;
+}
+
+.contact-form button {
+  background: #7C8A7E;
+  border: none;
+  padding: 12px;
+  color: #151718;
+}
+
+/* FOOTER */
+footer {
+  background: #101213;
+  text-align: center;
+  padding: 15px;
+  color: #777;
+}
+
+/* MOBILE */
+@media (max-width:576px){
+  .product-card img {
+    height: 200px;
+  }
+}
