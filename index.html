@@ -253,10 +253,10 @@
     <section id="contact">
       <div class="container">
         <h2 class="text-center mb-4">CONTACT</h2>
-        <form class="contact-form">
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <textarea rows="4" placeholder="Message"></textarea>
+        <form class="contact-form" name="contact-form-project2">
+          <input type="text" placeholder="Name" name="nama" />
+          <input type="email" placeholder="Email" name="email" />
+          <textarea rows="4" placeholder="Message" name="pesan"></textarea>
           <button type="submit">Send</button>
         </form>
       </div>
@@ -267,5 +267,41 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbznTr2h38vWpfE9PXK8I6_ua7oi5vBwaKHhHHEuVfjJ6eF3S6gYhKJsC__hnNLRaC1bbw/exec";
+  const form = document.forms["contact-form-project2"];
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    fetch(scriptURL, { method: "POST", body: new FormData(form) })
+      .then((response) => {
+      
+        const successMessage = document.createElement("p");
+        successMessage.textContent = "Pesan Terkirim!";
+        successMessage.style.color = "green";
+        successMessage.style.fontWeight = "bold";
+        successMessage.style.fontSize = "18px";
+        successMessage.style.textAlign = "center";
+
+        
+        form.parentNode.appendChild(successMessage);
+
+        
+        setTimeout(() => {
+          successMessage.remove();
+        }, 3000);
+
+        
+        form.reset();
+      })
+      .catch((error) => {
+        alert("Terjadi kesalahan, silakan coba lagi.");
+        console.error("Error!", error.message);
+      });
+  });
+</script>
+
+
   </body>
 </html>
